@@ -21,19 +21,49 @@ public:
 Heap::Heap(){
 	length = 1;
 }
+/*
+* void Heap:input*
+******************
+* Agrega los valores al arreglo.
+* Input:
+*int i, valor que se agrega al arreglo.
+******
+* Returns:
+* no retorna nada 
+*****/
 void Heap::input(int i)
 {
 	Array[length] = i;
 	up(i);
 	length++;
 }
-
+/*
+* void Heap::swap
+******************
+* Espacio de intercambio de posición de dos numeros 
+* Input:
+*int& x , un numero 
+*int& y, otro numero
+******
+* Returns:
+* no retorna nada 
+*****/
 void Heap::swap(int& x, int& y)
 {
 	int t = x;
 	x = y;
 	y = t;
 }
+/*
+* void Heap::down
+******************
+* Espacio de intercambio de posición de dos numeros 
+* Input: baja un numero en el heap.
+*int x, numero a bajar.
+******
+* Returns:
+* no retorna nada 
+*****/
 
 void Heap::down(int x)
 {
@@ -51,7 +81,16 @@ void Heap::down(int x)
 		}
 	}
 }
-
+/*
+* void Heap::up
+******************
+* sube un numero en el heap
+* Input:
+*int x, numero a subir.
+******
+* Returns:
+* no retorna nada 
+*****/
 void Heap::up(int x)
 {
 	while(x > 1)
@@ -65,7 +104,16 @@ void Heap::up(int x)
 			break;
 	}
 }
-
+/*
+* Heap::output
+******************
+* Guarda el heap en del arreglo
+* Input:
+*int *arreglo, arreglo a cual se le implementa el heap.
+******
+* Returns:
+* no retorna nada 
+*****/
 void Heap::output(int *arreglo)
 {
 	for(int i=length-1; i >= 1; --i){
@@ -74,8 +122,16 @@ void Heap::output(int *arreglo)
 	}
 	cout<<endl;
 }
-
-
+/*
+* void Heap::sort
+******************
+* Ordena el arreglo de menor a mayor los numeros que este contiene 
+* Input:
+*no recibe nada 
+******
+* Returns:
+* no retorna nada 
+*****/
 void Heap::sort()
 {
 	int len = length;
