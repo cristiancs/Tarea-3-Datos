@@ -146,17 +146,3 @@ void Heap::sort()
 }
 
 
-int main(){
-	Heap H;
-	H.input(5);
-	H.input(2);
-	H.input(4);
-	H.sort();
-	int *retorno = (int *) malloc(sizeof(int) * 3);
-	H.output(retorno);
-	for(int i=0; i < 3; ++i){
-		//arreglo[i] = Array[i];
-		cout<<retorno[i]<<' ';
-	}
-	free((void *) retorno);
-}

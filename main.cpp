@@ -1,5 +1,17 @@
 #include "tda-main.cpp"
 
+void procesar(int* A,int n){
+	int suma=A[0];
+	int valor=0;
+	int i=1;
+	while(i<n){
+		suma+=A[i];
+		valor+=suma;
+		i++;
+	}
+	cout<< valor <<endl;
+}
+
 int main(){
 	int cantnum;
 	cout<<"Ingrese cantidad de numeros:\n";
@@ -12,18 +24,19 @@ int main(){
   		while (cont != 0){
   			cout<<"Ingrese numero:\n";
   			cin >> N;
-    		/*H.input(N);
+    		H.input(N);
     		H.sort();
-			int *retorno = (int *) malloc(sizeof(int) * cantnum); ACA OCURRE LA MAGIA
+			int *retorno = (int *) malloc(sizeof(int) * cantnum);
+			H.output(retorno);
+			procesar(retorno,cantnum);
 			free((void *) retorno);
-			H.output(retorno);*/
 			cont --;
 			}
   		cout<<"Ingrese cantidad de numeros\n";
   		cin>>cantnum;
   	}
-  	return 0;
-	}
+ 	return 0;
+}
 	
 
 	
