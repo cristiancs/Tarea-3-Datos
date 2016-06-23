@@ -9,9 +9,10 @@ class Heap
 private:
 	int Array[MAX_VALUE];
 	int length;
+	int i;
 public:
 	Heap();
-	void input(int i);
+	void input(int numero, int largo);
 	void swap(int&x, int& y);
 	void down(int x);
 	void up(int x);
@@ -19,23 +20,26 @@ public:
 	void sort();
 };
 Heap::Heap(){
-	length = 1;
+	i = 1;
 }
 /*
 * void Heap:input*
 ******************
 * Agrega los valores al arreglo.
 * Input:
-*int i, valor que se agrega al arreglo.
+* int numero, valor que se agrega al arreglo.
+* int largo, Cantidad de numeros que se ingresaran
 ******
 * Returns:
 * no retorna nada 
 *****/
-void Heap::input(int i)
+void Heap::input(int numero,int largo)
 {
-	Array[length] = i;
+	length = largo;
+	Array[i]= numero;
 	up(i);
-	length++;
+
+	i++;
 }
 /*
 * void Heap::swap
@@ -116,11 +120,10 @@ void Heap::up(int x)
 *****/
 void Heap::output(int *arreglo)
 {
-	for(int i=length-1; i >= 1; --i){
-		arreglo[i] = Array[i];
-	//	cout<<Array[i]<<' ';
+	for(int i=length; i >= 1; --i){
+		//cout << Array[i] << endl;
+		arreglo[length-i] = Array[i];
 	}
-	cout<<endl;
 }
 /*
 * void Heap::sort
