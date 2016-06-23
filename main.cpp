@@ -1,4 +1,4 @@
-#include "tda-main.cpp"
+#include "tda.cpp"
 
 void procesar(int* A,int n){
 	//cout << A[0];
